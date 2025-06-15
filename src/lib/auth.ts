@@ -5,7 +5,7 @@ import { createAuthMiddleware, APIError } from "better-auth/api";
 
 import { prisma } from "@/lib/prisma";
 import { hashPassword, verifyPassword } from "@/lib/argon2";
-import { getValidDomains, normalizeName } from "@/lib/utils";
+import { normalizeName, VALID_DOMAINS } from "./utils";
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
@@ -26,8 +26,7 @@ export const auth = betterAuth({
         const email = String(ctx.body.email);
         const domain = email.split("@")[1];
 
-        const VALID_DOMAINS = getValidDomains()
-        if (!VALID_DOMAINS.includes(domain)) {
+        if (!VALID_DOMAINS().includes(domain)) {
           throw new APIError("BAD_REQUEST", {
             message: "Invalid domain. Please use a valid email.",
           });
@@ -42,8 +41,8 @@ export const auth = betterAuth({
               ...ctx.body,
               name,
             },
-          }
-        }
+          },
+        };
       }
     }),
   },
