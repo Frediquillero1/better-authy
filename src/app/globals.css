@@ -3,7 +3,15 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-montserrat: "Montserrat", system-ui, Arial, Helvetica, sans-serif;
+  --line-height: 1.5;
+  --font-weight: 400;
+}
+
+
 @theme inline {
+  --radius: 0.5rem;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -42,6 +50,7 @@
 }
 
 :root {
+  --font-montserrat: "Montserrat", sans-serif;
   --radius: 0.65rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -117,5 +126,19 @@
   body {
     @apply bg-background text-foreground;
   }
+    .hoverEffect {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  button {
+    @apply hover:cursor-pointer;
+  }
+}
+
+body {
+  font-family: var(--font-montserrat);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 

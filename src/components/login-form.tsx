@@ -37,7 +37,7 @@ export const LoginForm = () => {
       className='max-w-sm w-full space-y-4'
     >
       <div className='space-y-2'>
-        <Label htmlFor='email'>Email</Label>
+        <Label className='text-blue-500 font-semibold' htmlFor='email'>Email</Label>
         <Input
           type='email'
           id='email'
@@ -46,7 +46,7 @@ export const LoginForm = () => {
       </div>
 
       <div className='space-y-2'>
-        <Label htmlFor='password'>Password</Label>
+        <Label className='text-blue-500 font-semibold' htmlFor='password'>Password</Label>
         <Input
           type='password'
           id='password'

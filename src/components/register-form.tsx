@@ -36,15 +36,15 @@ export const RegisterForm = () => {
       className='max-w-sm w-full space-y-4'
     >
       <div className='space-y-2 text-blue-500 font-semibold'>
-        <Label htmlFor='name'>Name</Label>
+        <Label className='text-blue-500 font-semibold' htmlFor='name'>Name</Label>
         <Input
           id='name'
           name='name'
         />
       </div>
 
-      <div className='space-y-2 text-blue-500 font-semibold'>
-        <Label htmlFor='email'>Email</Label>
+      <div className='space-y-2'>
+        <Label className='text-blue-500 font-semibold' htmlFor='email'>Email</Label>
         <Input
           type='email'
           id='email'
@@ -52,8 +52,8 @@ export const RegisterForm = () => {
         />
       </div>
 
-      <div className='space-y-2 text-blue-500 font-semibold'>
-        <Label htmlFor='password'>Password</Label>
+      <div className='space-y-2'>
+        <Label className='text-blue-500 font-semibold' htmlFor='password'>Password</Label>
         <Input
           type='password'
           id='password'

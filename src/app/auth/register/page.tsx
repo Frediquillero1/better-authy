@@ -1,23 +1,65 @@
+import Container from '@/components/container';
 import { RegisterForm } from '@/components/register-form';
 import { ReturnButton } from '@/components/return-button';
 import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardTitle,
+} from '@/components/ui/card';
 import { ArrowLeftIcon } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
+import { Fragment } from 'react';
 
 export default function Page() {
   return (
-    <div className='px-8 py-16 container mx-auto max-w-screen-lg space-y-8'>
-      <div className='space-y-4'>
-        <ReturnButton href='/' label='Home' />
-        <h1 className='text-3xl font-bold text-[#408cff]/90'>Register</h1>
+    <>
+      <div
+        style={{
+          position: 'fixed',
+          width: '100vw',
+          height: '100vh',
+        }}
+      >
+        <Image
+          src='/images/unsplash.webp'
+          alt='Image from the author'
+          layout='fill'
+        />
       </div>
+      <Container className='bg-[#313131]/25 w-full h-screen flex justify-center items-center'>
+        <aside className='bg-white w-full max-w-md rounded-xl bg-opacity-20 shadow-lg shadow-[#313131]'>
+          <Card className='w-full max-w-md mx-auto bg-gradient-to-tr from-blue-100 to-green-100 relative z-1'>
+            <CardContent className='px-8 py-16 container mx-auto max-w-screen-lg space-y-4'>
+              <ReturnButton
+                href='/'
+                label='Home'
+              />
+              <CardTitle className='text-3xl font-bold text-[#408cff]/90'>
+                Sign Up, Now!
+              </CardTitle>
+              <CardDescription className='text-[#408cff]/90 text-sm'>
+                We are happy to have you with us.
+              </CardDescription>
 
-      <RegisterForm />
+              <RegisterForm />
 
-      <p className='text-[#408cff]/90 text-sm'>
-        Already have an account?{' '}
-        <Link href='/auth/login' className='hover:text-[#C337FA]'>Login</Link>
-      </p>
-    </div>
+              <CardFooter className='text-[#408cff]/90 text-sm'>
+                Already have an account?{' '}
+                <Link
+                  href='/auth/login'
+                  className='text-green-600 hover:text-[#C337FA] font-semibold transition-all ease-linear pl-1'
+                >
+                  Login
+                </Link>
+              </CardFooter>
+            </CardContent>
+          </Card>
+        </aside>
+      </Container>
+    </>
   );
 }
