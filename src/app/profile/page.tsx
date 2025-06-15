@@ -16,9 +16,7 @@ export default async function Page() {
     headers: await headers(),
   });
 
-  if (!session) {
-    return <p className='text-destructive'>Unauthorized</p>;
-  }
+  if (!session) redirect('/auth/login');
 
   return (
     <>

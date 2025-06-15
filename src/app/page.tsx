@@ -4,8 +4,9 @@ import Link from 'next/link';
 import Container from '@/components/container';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import React from 'react';
+import { GetStartedButton } from '@/components/get-started-button';
 
-const Home = () => {
+export default function Home() {
   return (
     <>
       <Container className='w-full h-screen flex justify-center items-center'>
@@ -39,18 +40,12 @@ const Home = () => {
                 .
               </TypographyP>
             </CardContent>
-            <CardFooter>
-              <Link
-              href='auth/login'
-              className={buttonVariants()}
-            >
-              Get Started
-            </Link>
-            </CardFooter>
+              <CardFooter>
+                <GetStartedButton />
+              </CardFooter>
           </Card>
         </aside>
       </Container>
     </>
   );
 };
-export default Home;
