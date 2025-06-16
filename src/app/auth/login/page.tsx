@@ -10,23 +10,11 @@ import {
 } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
+import styles from './BackgroundImage.module.css'
 
 export default function Page() {
   return (
-    <>
-      <div
-        style={{
-          position: 'fixed',
-          width: '100vw',
-          height: '100vh',
-        }}
-      >
-        <Image
-          src='/images/unsplash.webp'
-          alt='Image from the author'
-          layout='fill'
-        />
-      </div>
+    <div className={styles.container}>
       <Container className='w-full h-screen flex justify-center items-center'>
         <aside className='bg-white w-full max-w-md rounded-xl bg-opacity-20 shadow-lg shadow-[#313131]'>
           <Card className='w-full max-w-md mx-auto bg-gradient-to-tr from-blue-100 to-green-100 rounded-lg shadow-lg relative z-1'>
@@ -57,6 +45,6 @@ export default function Page() {
           </Card>
         </aside>
       </Container>
-    </>
+    </div>
   );
 }

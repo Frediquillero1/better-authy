@@ -1,7 +1,6 @@
 import Container from '@/components/container';
-import { RegisterForm } from '@/components/register-form';
+import { LoginForm } from '@/components/login-form';
 import { ReturnButton } from '@/components/return-button';
-import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -9,28 +8,15 @@ import {
   CardFooter,
   CardTitle,
 } from '@/components/ui/card';
-import { ArrowLeftIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Fragment } from 'react';
+import styles from './BackgroundImage.module.css'
+import { RegisterForm } from '@/components/register-form';
 
 export default function Page() {
   return (
-    <>
-      <div
-        style={{
-          position: 'fixed',
-          width: '100vw',
-          height: '100vh',
-        }}
-      >
-        <Image
-          src='/images/unsplash.webp'
-          alt='Image from the author'
-          layout='fill'
-        />
-      </div>
-      <Container className='bg-[#313131]/25 w-full h-screen flex justify-center items-center'>
+    <div className={styles.container}>
+      <Container className='w-full h-screen flex justify-center items-center'>
         <aside className='bg-white w-full max-w-md rounded-xl bg-opacity-20 shadow-lg shadow-[#313131]'>
           <Card className='w-full max-w-md mx-auto bg-gradient-to-tr from-blue-100 to-green-100 relative z-1'>
             <CardContent className='px-8 py-16 container mx-auto max-w-screen-lg space-y-4'>
@@ -60,6 +46,6 @@ export default function Page() {
           </Card>
         </aside>
       </Container>
-    </>
+    </div>
   );
 }
