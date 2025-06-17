@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <>
       <Container className='w-full h-screen flex justify-center items-center'>
-        <aside className='bg-white w-full max-w-md rounded-xl bg-opacity-20 shadow-lg shadow-[#313131]'>
-          <Card className='w-full max-w-md mx-auto bg-gradient-to-tr from-blue-100 to-green-100 rounded-lg shadow-lg'>
+        <aside className='bg-white w-full overflow-x-auto rounded-xl bg-opacity-20 shadow-lg shadow-[#313131]'>
+          <Card className='w-full overflow-x-auto bg-gradient-to-tr from-blue-100 to-green-100 rounded-lg shadow-lg'>
             <CardHeader>
               <CardTitle className='text-2xl'>
                 Hey, I’m Fredi Schlesinger 😎
