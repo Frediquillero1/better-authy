@@ -32,7 +32,7 @@ export default async function Page() {
     return (
       <div className={styles.container}>
         <Container className='w-full h-screen flex justify-center items-center'>
-          <aside className='bg-white w-full max-w-md rounded-xl bg-opacity-20 shadow-lg shadow-[#313131]'>
+          <aside className='bg-white w-full max-w-md rounded-xl bg-opacity-20 shadow-lg shadow-[#222222]'>
             <Card className='w-full max-w-md mx-auto bg-gradient-to-tr from-blue-100 to-green-100 rounded-lg shadow-lg relative z-1'>
               <CardContent className='px-8 py-16 container mx-auto max-w-screen-lg space-y-4'>
                 <ReturnButton

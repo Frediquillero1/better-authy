@@ -18,7 +18,7 @@ import Image from 'next/image';
 import styles from './BackgroundImage.module.css';
 
 export default async function Page() {
-  const headerList = await headers()
+  const headerList = await headers();
 
   const session = await auth.api.getSession({
     headers: headerList,
@@ -39,7 +39,7 @@ export default async function Page() {
     <div className={styles.container}>
       <>
         <Container className='w-full h-screen flex justify-center items-center'>
-          <aside className='bg-white w-full max-w-md rounded-xl bg-opacity-20 shadow-lg shadow-[#313131]'>
+          <aside className='bg-white w-full max-w-md rounded-xl bg-opacity-20 shadow-lg shadow-[#22222]'>
             <Card className='w-full overflow-x-auto bg-gradient-to-tr from-blue-100 to-green-100 rounded-lg shadow-lg relative z-1'>
               <CardContent className='px-8 py-16 container mx-auto max-w-screen-lg space-y-8'>
                 <ReturnButton
@@ -49,7 +49,7 @@ export default async function Page() {
 
                 <CardTitle className='text-2xl font-bold text-[#408cff]/90'>
                   <CardDescription className='my-4'>
-                    <div className='flex flex-row items-center gap-2 pb-4'>
+                    <div className='flex flex-row items-center gap-2 pb-2'>
                       {session.user.role === 'ADMIN' && (
                         <Button
                           size='sm'
@@ -61,7 +61,9 @@ export default async function Page() {
 
                       <SignOutButton />
                     </div>
-                    <div className='text-2xl font-bold pb-4 text-[#408cff]'>Permission</div>
+                    <div className='text-2xl font-bold pb-4 text-[#408cff]'>
+                      Permission
+                    </div>
 
                     <div className='space-x-4 pb-4'>
                       <Button size='sm'>MANAGE OWN POSTS</Button>

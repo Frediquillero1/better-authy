@@ -10,16 +10,17 @@ import {
 } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './BackgroundImage.module.css'
+import styles from './BackgroundImage.module.css';
 import { RegisterForm } from '@/components/register-form';
+import { SignInOauthButton } from '@/components/sign-in oauth-button';
 
 export default function Page() {
   return (
     <div className={styles.container}>
       <Container className='w-full h-screen flex justify-center items-center'>
-        <aside className='bg-white w-full max-w-md rounded-xl bg-opacity-20 shadow-lg shadow-[#313131]'>
+        <aside className='bg-white bg-opacity-20 w-full max-w-md rounded-xl shadow-lg shadow-[#222222]'>
           <Card className='w-full max-w-md mx-auto bg-gradient-to-tr from-blue-100 to-green-100 relative z-1'>
-            <CardContent className='px-8 py-16 container mx-auto max-w-screen-lg space-y-4'>
+            <CardContent className='px-8 py-2 container mx-auto max-w-screen-lg space-y-4'>
               <ReturnButton
                 href='/'
                 label='Home'
@@ -42,6 +43,19 @@ export default function Page() {
                   Login
                 </Link>
               </CardFooter>
+              <div className='space-y-4 pt-2'>
+                <hr className='max-w-sm' />
+                <div className='flex flex-col max-w-sm gap-4'>
+                  <SignInOauthButton
+                    signUp
+                    provider='google'
+                  />
+                  <SignInOauthButton
+                    signUp
+                    provider='facebook'
+                  />
+                </div>
+              </div>
             </CardContent>
           </Card>
         </aside>
